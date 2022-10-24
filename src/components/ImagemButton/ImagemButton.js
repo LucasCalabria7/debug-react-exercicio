@@ -1,5 +1,4 @@
 import React from 'react';
-// import './ImagemButton.css'
 import styled from 'styled-components'
 
 function ImagemButton(props) {
@@ -24,7 +23,6 @@ function ImagemButton(props) {
             <ImgVerMais src={ props.imagem }/>
             <p>{ props.texto }</p>
         </ContainerImagemVerMais>
-
     )
 }
 
