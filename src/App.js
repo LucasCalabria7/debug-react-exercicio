@@ -1,16 +1,16 @@
 import React from 'react';
-import CardGrande from './components/CardGrande';
+import {CardGrande} from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import styled, { createGlobalStyle } from 'styled-components'
-import imagemPerfil from "./img/DP-Brock.png"
-import { CardPequeno } from './component/CardPequeno';
-import downArrow from "./img/down-arrow.png"
-import iconePedra from "./img/rock-symbol.jpg"
-import iconeEstadio from "./img/pewter-gym.jpg"
-import iconeEmail from "./img/email"
-import iconePin from "../img/pin-endereco.png"
-import iconeFB from "./img/facebook-logo-3.png"
-import iconeTT from "./img/twitter-logo-1-1.png"
+import imagemPerfil from "../src/components/img/DP-Brock.png";
+import  CardPequeno  from './components/CardPequeno/CardPequeno.js';
+import downArrow from "../src/components/img/down-arrow.png"
+import iconePedra from "../src/components/img/rock-symbol.jpg"
+import iconeEstadio from "./components/img/pewter-gym.jpg"
+import iconeEmail from "./components/img/email.png"
+import iconePin from "../src/components/img/pin-endereco.png"
+import iconeFB from "./components/img/facebook-logo-3.png"
+import iconeTT from "./components/img/twitter-logo-1-1.png"
 
 const GlobalStyle = createGlobalStyle`
     *{
@@ -64,7 +64,7 @@ function App() {
       <SectionPagina>
         <Titulos>Dados pessoais</Titulos>
         <CardGrande
-          imagem={perfil.image}
+          imagem={perfil.imagem}
           nome={perfil.nome}
           descricao={perfil.descricao}
         />
@@ -79,13 +79,13 @@ function App() {
         <CardPequeno
           imagem={iconeEmail}
           nome="E-mail:"
-          descricao={perfil}
+          description={perfil.email}
         />
       </SectionPagina>
       <SectionPagina>
         <CardPequeno
-          image={iconePin}
-          name="Cidade:"
+          imagem={iconePin}
+          nome="Cidade:"
           description={perfil.cidade}
         />
       </SectionPagina>
@@ -94,13 +94,13 @@ function App() {
       <SectionPagina>
         <Titulos>Experiências profissionais</Titulos>
         <CardGrande
-          imagem={perfil.experiencia.icone}
-          nome={perfil.experiencia.empresa}
-          descricao={perfil.experiencia.descricao}
+          imagem={perfil.experiencia[0].icone}
+          name={perfil.experiencia[0].empresa}
+          descricao={perfil.experiencia[0].descricao}
         />
 
         <CardGrande
-          image={perfil.experiencia[1].icone}
+          imagem={perfil.experiencia[1].icone}
           name={perfil.experiencia[1].empresa}
           descricao={perfil.experiencia[1].descricao}
         />
@@ -109,11 +109,11 @@ function App() {
       <SectionPagina>
         <Titulos>Minhas redes sociais</Titulos>
         <ImagemButton
-          imagem="./img/facebook-logo-3.png"
+          imagem={iconeFB}
           texto="Facebook"
         />
         <ImagemButton
-          imagem="./img/twitter-logo-1-1.png"
+          imagem={iconeTT}
           texto="Twitter"
         />
       </SectionPagina>
